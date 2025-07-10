@@ -1,0 +1,14 @@
+@model IEnumerable<Soqia.Models.Region>
+
+@{
+    ViewData["Title"] = "Select Region";
+}
+
+<h1>Select a Region</h1>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a asp-action="SelectTank" asp-route-regionId="@item.Id" class="list-group-item list-group-item-action">@item.Name</a>
+    }
+</div>

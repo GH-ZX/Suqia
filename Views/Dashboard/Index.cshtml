@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total Orders</h5>
+                <p class="card-text">@ViewData["TotalOrders"]</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total Customers</h5>
+                <p class="card-text">@ViewData["TotalCustomers"]</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total Tanks</h5>
+                <p class="card-text">@ViewData["TotalTanks"]</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total Drivers</h5>
+                <p class="card-text">@ViewData["TotalDrivers"]</p>
+            </div>
+        </div>
+    </div>
+</div>

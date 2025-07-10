@@ -1,0 +1,20 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Soqia.Models;
+
+namespace Soqia.Data
+{
+    public class ApplicationDbContext : IdentityDbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Tank> Tanks { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+    }
+}
