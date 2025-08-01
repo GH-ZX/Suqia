@@ -7,25 +7,25 @@ namespace Suqia.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "??? ?????? ?????")]
-        [Display(Name = "??? ??????")]
+        [Required(ErrorMessage = "Customer name is required")]
+        [Display(Name = "Customer Name")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "??? ?????? ?????")]
-        [Display(Name = "??? ??????")]
+        [Required(ErrorMessage = "Phone number is required")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "??????? ?????")]
-        [Display(Name = "??????? ????????")]
+        [Required(ErrorMessage = "Address is required")]
+        [Display(Name = "Detailed Address")]
         public string Address { get; set; }
 
-        // Foreign Key ???????
-        [Display(Name = "???????")]
+        // Foreign Key for Area
+        [Display(Name = "Area")]
         public int AreaId { get; set; }
         [ForeignKey("AreaId")]
         public virtual Area Area { get; set; }
 
-        // Navigation Property: ?????? ???? ?? ???? ???? ??? ?????
+        // Navigation Property: A customer can have multiple orders
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

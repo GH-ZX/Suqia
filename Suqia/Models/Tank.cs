@@ -7,21 +7,21 @@ namespace Suqia.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "??? ?????? ??????")]
-        [Display(Name = "??? ?????? (???)")]
+        [Required(ErrorMessage = "Tank capacity is required")]
+        [Display(Name = "Tank Capacity (L)")]
         public int Capacity { get; set; }
 
-        [Required(ErrorMessage = "??? ?????? ?????")]
-        [Display(Name = "??? ??????")]
-        public string WaterType { get; set; } // ????: "???? ???" ?? "???? ????"
+        [Required(ErrorMessage = "Water type is required")]
+        [Display(Name = "Water Type")]
+        public string WaterType { get; set; } // Example: "Drinking Water" or "Service Water"
 
-        [Required(ErrorMessage = "??? ??????? ?????")]
+        [Required(ErrorMessage = "Price per barrel is required")]
         [Column(TypeName = "decimal(18, 2)")]
-        [Display(Name = "??? ???????")]
+        [Display(Name = "Price Per Barrel")]
         public decimal PricePerBarrel { get; set; }
 
-        // Foreign Key ???????
-        [Display(Name = "???????")]
+        // Foreign Key for Area
+        [Display(Name = "Area")]
         public int AreaId { get; set; }
         [ForeignKey("AreaId")]
         public virtual Area Area { get; set; }

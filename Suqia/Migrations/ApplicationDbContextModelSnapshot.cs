@@ -160,7 +160,7 @@ namespace Suqia.Migrations
                     b.HasOne("Suqia.Models.Area", "Area")
                         .WithMany("Customers")
                         .HasForeignKey("AreaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Area");
@@ -171,7 +171,7 @@ namespace Suqia.Migrations
                     b.HasOne("Suqia.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Suqia.Models.Driver", "Driver")
@@ -181,7 +181,7 @@ namespace Suqia.Migrations
                     b.HasOne("Suqia.Models.Tank", "Tank")
                         .WithMany()
                         .HasForeignKey("TankId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Customer");
@@ -196,7 +196,7 @@ namespace Suqia.Migrations
                     b.HasOne("Suqia.Models.Area", "Area")
                         .WithMany("Tanks")
                         .HasForeignKey("AreaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Area");

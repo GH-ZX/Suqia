@@ -1,0 +1,50 @@
+﻿@model Suqia.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-primary h-100">
+            <div class="card-body">
+                <h5 class="card-title">Completed Orders</h5>
+                <p class="card-text fs-4">@Model.CompletedOrdersCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-success h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total Customers</h5>
+                <p class="card-text fs-4">@Model.CustomersCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-info h-100">
+            <div class="card-body">
+                <h5 class="card-title">Available Drivers</h5>
+                <p class="card-text fs-4">@Model.DriversCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total Tank Capacity (L)</h5>
+                <p class="card-text fs-4">@Model.TotalTanksCapacity.ToString("N0")</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-warning h-100">
+            <div class="card-body">
+                <h5 class="card-title">Most Requested Area</h5>
+                <p class="card-text fs-4">@Model.MostRequestedArea</p>
+            </div>
+        </div>
+    </div>
+</div>
