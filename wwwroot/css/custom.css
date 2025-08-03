@@ -114,3 +114,70 @@ body {
     padding: 0.75rem 1.5rem;
     font-size: 1.1rem;
 }
+
+/* Dashboard Card Styles */
+.dashboard-card {
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.dashboard-card .card-body-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.dashboard-card:hover .card-body-icon {
+    opacity: 0.4;
+}
+
+.dashboard-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.dashboard-card .card-text {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.card-orders {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+}
+
+.card-customers {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+}
+
+.card-tanks {
+    background: linear-gradient(45deg, #ffc107, #d39e00);
+}
+
+.card-drivers {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+}
+
+.dashboard-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-link:hover {
+    text-decoration: none;
+    color: inherit;
+}

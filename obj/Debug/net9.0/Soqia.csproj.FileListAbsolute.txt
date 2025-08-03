@@ -815,4 +815,4 @@ C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\staticwebassets.build.en
 C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\Soqia.csproj.Up2Date
 C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\Soqia.genruntimeconfig.cache
 C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\ref\Soqia.dll
-C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\compressed\lipyyouxpx-5ksw7wdk2f.gz
+C:\Users\ASUS\Documents\Ahmed GH\Soqia\obj\Debug\net9.0\compressed\lipyyouxpx-l6zwkaxbz2.gz

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Soqia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32f4448511f3a1eec82ccf1d523b525ea115dee6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4655388ca7cf06c73caa761c1f3147cad516eee3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Soqia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Soqia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

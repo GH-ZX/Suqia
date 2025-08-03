@@ -8,55 +8,55 @@
 
 <div class="row">
     <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card text-white bg-primary h-100">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="me-3">
-                        <div class="text-white-75 small">Total Orders</div>
-                        <div class="text-lg fw-bold">@ViewData["TotalOrders"]</div>
+        <a asp-controller="Orders" asp-action="Index" class="dashboard-link">
+            <div class="card dashboard-card card-orders h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <i class="fas fa-shopping-cart fa-2x"></i>
+                    <div class="card-title">Total Orders</div>
+                    <div class="card-text">@ViewData["TotalOrders"]</div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card text-white bg-success h-100">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="me-3">
-                        <div class="text-white-75 small">Total Customers</div>
-                        <div class="text-lg fw-bold">@ViewData["TotalCustomers"]</div>
+        <a asp-controller="Customers" asp-action="Index" class="dashboard-link">
+            <div class="card dashboard-card card-customers h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <i class="fas fa-users fa-2x"></i>
+                    <div class="card-title">Total Customers</div>
+                    <div class="card-text">@ViewData["TotalCustomers"]</div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card text-white bg-warning h-100">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="me-3">
-                        <div class="text-white-75 small">Total Tanks</div>
-                        <div class="text-lg fw-bold">@ViewData["TotalTanks"]</div>
+        <a asp-controller="Tanks" asp-action="Index" class="dashboard-link">
+            <div class="card dashboard-card card-tanks h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-truck"></i>
                     </div>
-                    <i class="fas fa-truck fa-2x"></i>
+                    <div class="card-title">Total Tanks</div>
+                    <div class="card-text">@ViewData["TotalTanks"]</div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card text-white bg-danger h-100">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="me-3">
-                        <div class="text-white-75 small">Total Drivers</div>
-                        <div class="text-lg fw-bold">@ViewData["TotalDrivers"]</div>
+        <a asp-controller="Drivers" asp-action="Index" class="dashboard-link">
+            <div class="card dashboard-card card-drivers h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fas fa-id-card-alt"></i>
                     </div>
-                    <i class="fas fa-id-card-alt fa-2x"></i>
+                    <div class="card-title">Total Drivers</div>
+                    <div class="card-text">@ViewData["TotalDrivers"]</div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
