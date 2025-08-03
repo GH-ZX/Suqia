@@ -2,38 +2,60 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<h1>Dashboard</h1>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Dashboard</h1>
+</div>
 
 <div class="row">
-    <div class="col-md-3">
-        <div class="card">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-white bg-primary h-100">
             <div class="card-body">
-                <h5 class="card-title">Total Orders</h5>
-                <p class="card-text">@ViewData["TotalOrders"]</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="me-3">
+                        <div class="text-white-75 small">Total Orders</div>
+                        <div class="text-lg fw-bold">@ViewData["TotalOrders"]</div>
+                    </div>
+                    <i class="fas fa-shopping-cart fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-white bg-success h-100">
             <div class="card-body">
-                <h5 class="card-title">Total Customers</h5>
-                <p class="card-text">@ViewData["TotalCustomers"]</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="me-3">
+                        <div class="text-white-75 small">Total Customers</div>
+                        <div class="text-lg fw-bold">@ViewData["TotalCustomers"]</div>
+                    </div>
+                    <i class="fas fa-users fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-white bg-warning h-100">
             <div class="card-body">
-                <h5 class="card-title">Total Tanks</h5>
-                <p class="card-text">@ViewData["TotalTanks"]</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="me-3">
+                        <div class="text-white-75 small">Total Tanks</div>
+                        <div class="text-lg fw-bold">@ViewData["TotalTanks"]</div>
+                    </div>
+                    <i class="fas fa-truck fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-white bg-danger h-100">
             <div class="card-body">
-                <h5 class="card-title">Total Drivers</h5>
-                <p class="card-text">@ViewData["TotalDrivers"]</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="me-3">
+                        <div class="text-white-75 small">Total Drivers</div>
+                        <div class="text-lg fw-bold">@ViewData["TotalDrivers"]</div>
+                    </div>
+                    <i class="fas fa-id-card-alt fa-2x"></i>
+                </div>
             </div>
         </div>
     </div>

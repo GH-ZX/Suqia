@@ -1,0 +1,42 @@
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Soqia.Models;
+
+namespace Soqia.Data
+{
+    public class ApplicationDbContext : IdentityDbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Tank> Tanks { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            // Configure delete behavior for Orders
+            builder.Entity<Order>()
+                .HasOne(o => o.Tank)
+                .WithMany()
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.Customer)
+                .WithMany()
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Configure delete behavior for Tanks
+            builder.Entity<Tank>()
+                .HasOne(t => t.Region)
+                .WithMany()
+                .OnDelete(DeleteBehavior.NoAction);
+        }
+    }
+}

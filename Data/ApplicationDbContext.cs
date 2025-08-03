@@ -16,5 +16,37 @@ namespace Soqia.Data
         public DbSet<Tank> Tanks { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Driver> Drivers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            // Configure relationships for Orders
+            builder.Entity<Order>()
+                .HasOne(o => o.Tank)
+                .WithMany()
+                .HasForeignKey(o => o.TankId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.Customer)
+                .WithMany(c => c.Orders)
+                .HasForeignKey(o => o.CustomerId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Configure relationships for Tanks
+            builder.Entity<Tank>()
+                .HasOne(t => t.Region)
+                .WithMany(r => r.Tanks)
+                .HasForeignKey(t => t.RegionId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Configure relationships for Customers
+            builder.Entity<Customer>()
+                .HasOne(c => c.Region)
+                .WithMany(r => r.Customers)
+                .HasForeignKey(c => c.RegionId)
+                .OnDelete(DeleteBehavior.NoAction);
+        }
     }
 }

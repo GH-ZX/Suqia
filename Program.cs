@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
@@ -19,14 +19,22 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<ApplicationDbContext>();
-    context.Database.Migrate();
-    if (!context.Regions.Any())
+    try 
     {
-        var region = new Region { Name = "منطقة البارة" };
-        context.Regions.Add(region);
-        context.Tanks.Add(new Tank { Name = "الشفا", Location = "Near the main road", WaterType = "Drinking Water", Price = 20, Region = region });
-        context.SaveChanges();
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        context.Database.Migrate();
+        if (!context.Regions.Any())
+        {
+            var region = new Region { Name = "منطقة البارة" };
+            context.Regions.Add(region);
+            context.Tanks.Add(new Tank { Name = "الشفا", Location = "Near the main road", WaterType = "Drinking Water", Price = 20, Region = region });
+            context.SaveChanges();
+        }
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while migrating or seeding the database.");
     }
 }
 
@@ -42,7 +50,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-app.UseAuthentication();;
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

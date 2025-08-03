@@ -2,7 +2,109 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .hero-section {
+            
+        padding: 6rem 0;
+        text-align: center;
+        border-radius: 0.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-section p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-section .btn-light:hover {
+        background-color: #0056b3;
+        color: white;
+        border-color: #0056b3;
+    }
+
+    .section-divider {
+        height: 4px;
+        width: 80px;
+        background-color: #007bff;
+        margin: 0 auto 3rem;
+        border-radius: 2px;
+    }
+
+    .features-section {
+        padding: 4rem 0;
+    }
+
+    .feature-card {
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.5rem;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        color: #007bff;
+    }
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section mb-3">
+    <div class="container">
+        <h1 class="display-4">Welcome to Soqia</h1>
+        <p class="lead">Your reliable solution for water delivery management. Streamline orders, track deliveries, and manage resources all in one place.</p>
+        <a asp-area="" asp-controller="OrderNow" asp-action="SelectRegion" class="btn btn-light btn-lg">Order Water Now</a>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section text-center">
+    <div class="container">
+        <h2 class="mb-4">Why Choose Soqia?</h2>
+        <div class="section-divider"></div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card h-100 p-4">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h5 class="card-title">Efficient Management</h5>
+                        <p class="card-text">A powerful dashboard to monitor all operations, from orders to drivers, in real-time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card h-100 p-4">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-hand-holding-water"></i>
+                        </div>
+                        <h5 class="card-title">Easy Ordering</h5>
+                        <p class="card-text">A simple and intuitive interface for customers to place new water orders in just a few clicks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card h-100 p-4">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h5 class="card-title">Comprehensive Tracking</h5>
+                        <p class="card-text">Manage regions, tanks, customers, and drivers with dedicated and easy-to-use sections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
